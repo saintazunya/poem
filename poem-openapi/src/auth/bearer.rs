@@ -18,7 +18,7 @@ impl BearerAuthorization for Bearer {
             .typed_get::<Authorization<poem::web::headers::authorization::Bearer>>()
         {
             return Ok(Bearer {
-                token: auth.token().to_string(),
+                token: auth.0.token().to_string(),
             });
         }
 

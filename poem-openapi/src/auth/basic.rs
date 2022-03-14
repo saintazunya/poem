@@ -21,8 +21,8 @@ impl BasicAuthorization for Basic {
             .typed_get::<Authorization<poem::web::headers::authorization::Basic>>()
         {
             return Ok(Basic {
-                username: auth.username().to_string(),
-                password: auth.password().to_string(),
+                username: auth.0.username().to_string(),
+                password: auth.0.password().to_string(),
             });
         }
 
